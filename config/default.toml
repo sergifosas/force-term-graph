@@ -41,8 +41,8 @@ dim_factor = 0.25
 # smooth at the display refresh rate; the pane is limited by how fast the
 # terminal decodes images).
 frontend = "auto"
-# Terminal image protocol: "auto" (asks the terminal; prefers kitty, falls
-# back to iterm2), "kitty" or "iterm2".
+# Terminal image protocol: "auto" (iterm2 in WezTerm, kitty in kitty; other
+# terminals are asked whether they support kitty), "kitty" or "iterm2".
 protocol = "auto"
 # Frame-rate cap while the layout moves or you interact.
 fps = 60.0
