@@ -1,0 +1,13 @@
+[package]
+name = "graph-render"
+description = "CPU rasterizer: paints a graph-core Scene into an RGBA pixmap / PNG."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+graph-core = { workspace = true }
+anyhow = { workspace = true }
+fontdue = { workspace = true }
+png = { workspace = true }
+tiny-skia = { workspace = true }

@@ -1,0 +1,54 @@
+# force-term-graph default configuration.
+#
+# Override any key in your user config:
+#   Windows: %APPDATA%\graph\config.toml
+#   Linux/macOS: $XDG_CONFIG_HOME/graph/config.toml (or ~/.config/graph/config.toml)
+# or pass --config <file>. Only the keys you set are overridden.
+
+[physics]
+repulsion = 60.0          # pairwise push, ∝ 1/d (Fruchterman-Reingold)
+min_distance = 12.0       # repulsion is capped below this distance
+link_strength = 0.45      # spring stiffness along edges
+link_distance = 60.0      # spring rest length
+gravity = 0.005           # pull toward the centre
+friction = 0.15           # velocity removed per step (0..1)
+max_velocity = 40.0       # per-step displacement cap
+alpha_min = 0.001         # "settled" threshold
+alpha_decay = 0.0228      # cooling rate (~300 steps to settle)
+steps_per_second = 60.0
+initial_spacing = 20.0
+
+[style]
+background = "#1e1e24"
+edge = "#4a4a5a"
+edge_highlight = "#a68af9"
+label = "#dcddde"
+ghost = "#5c5c6a"
+selection = "#ffffff"
+palette = ["#a68af9", "#5fb3f9", "#62d6a3", "#f7c96b", "#f78c6b", "#ef6b9a", "#9ad06b", "#6bd6e0"]
+node_radius = 5.0
+node_radius_per_degree = 1.6
+min_screen_radius = 2.0
+edge_width = 1.0
+label_size = 13.0
+label_min_zoom = 1.4
+always_label_below = 60
+dim_factor = 0.25
+
+[render]
+# Where `graph` draws: "auto" (inside the terminal pane in WezTerm/kitty,
+# otherwise a native window), "pane", or "window" (GPU window: sharp and
+# smooth at the display refresh rate; the pane is limited by how fast the
+# terminal decodes images).
+frontend = "auto"
+# Terminal image protocol: "auto" (asks the terminal; prefers kitty, falls
+# back to iterm2), "kitty" or "iterm2".
+protocol = "auto"
+# Frame-rate cap while the layout moves or you interact.
+fps = 60.0
+# Resolution factor for in-motion frames (1.0 = native, always sharp).
+# Lower it (e.g. 0.5) only if your terminal can't keep up; a full-resolution
+# frame is then drawn once things stop moving.
+interactive_scale = 1.0
+# Cap on the rendered image's longest side, in pixels.
+max_dimension = 4096

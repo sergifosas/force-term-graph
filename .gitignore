@@ -1,0 +1,4 @@
+/target
+probe-report.txt
+*.png
+!crates/**/assets/*.png

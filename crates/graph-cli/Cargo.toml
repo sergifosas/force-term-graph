@@ -1,0 +1,27 @@
+[package]
+name = "graph-cli"
+description = "The `graph` command: wires sources, engine and frontends together."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "graph"
+path = "src/main.rs"
+
+[features]
+default = ["gui"]
+# Native GPU window (`--window`). Disable for a lighter, terminal-only build:
+# `cargo install --path crates/graph-cli --no-default-features`
+gui = ["dep:graph-gui"]
+
+[dependencies]
+graph-core = { workspace = true }
+graph-sources = { workspace = true }
+graph-render = { workspace = true }
+graph-term = { workspace = true }
+graph-gui = { workspace = true, optional = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+toml = { workspace = true }

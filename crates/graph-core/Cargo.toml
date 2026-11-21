@@ -1,0 +1,10 @@
+[package]
+name = "graph-core"
+description = "Graph model, force-directed physics, camera and backend-agnostic scene. No I/O, no terminal, no GPU."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }

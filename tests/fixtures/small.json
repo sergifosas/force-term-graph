@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    { "id": "rust", "label": "Rust", "category": "language" },
+    { "id": "cargo", "label": "Cargo", "category": "tool" },
+    { "id": "wezterm", "label": "WezTerm", "category": "tool" },
+    { "id": "kitty-proto", "label": "Kitty graphics", "category": "protocol" },
+    { "id": "iterm2-proto", "label": "iTerm2 images", "category": "protocol" },
+    { "id": "sixel", "label": "Sixel", "category": "protocol" },
+    { "id": "obsidian", "label": "Obsidian", "category": "tool" },
+    { "id": "markdown", "label": "Markdown", "category": "format" },
+    { "id": "json", "label": "JSON", "category": "format" },
+    { "id": "tiny-skia", "label": "tiny-skia", "category": "crate" },
+    { "id": "egui", "label": "egui", "category": "crate" },
+    { "id": "wgpu", "label": "wgpu", "category": "crate" },
+    { "id": "crossterm", "label": "crossterm", "category": "crate" },
+    { "id": "physics", "label": "Force physics", "category": "concept" },
+    { "id": "barnes-hut", "label": "Barnes-Hut", "category": "concept" },
+    { "id": "graph-view", "label": "Graph view", "category": "concept" }
+  ],
+  "edges": [
+    { "source": "rust", "target": "cargo" },
+    { "source": "rust", "target": "tiny-skia" },
+    { "source": "rust", "target": "egui" },
+    { "source": "rust", "target": "wgpu" },
+    { "source": "rust", "target": "crossterm" },
+    { "source": "egui", "target": "wgpu" },
+    { "source": "wezterm", "target": "kitty-proto" },
+    { "source": "wezterm", "target": "iterm2-proto" },
+    { "source": "wezterm", "target": "sixel" },
+    { "source": "wezterm", "target": "rust" },
+    { "source": "crossterm", "target": "wezterm" },
+    { "source": "obsidian", "target": "markdown" },
+    { "source": "obsidian", "target": "graph-view" },
+    { "source": "graph-view", "target": "physics" },
+    { "source": "physics", "target": "barnes-hut" },
+    { "source": "graph-view", "target": "tiny-skia" },
+    { "source": "markdown", "target": "json", "weight": 0.5 },
+    { "source": "graph-view", "target": "wikilinks" }
+  ]
+}

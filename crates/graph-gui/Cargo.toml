@@ -1,0 +1,18 @@
+[package]
+name = "graph-gui"
+description = "Native GPU window frontend (eframe/egui on wgpu): sharp at any resolution, refresh-rate animation."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+graph-core = { workspace = true }
+graph-render = { workspace = true } # only for the shared label font
+anyhow = { workspace = true }
+eframe = { version = "0.37.0", default-features = false, features = [
+    "wgpu",
+    "default_fonts",
+    "accesskit",
+    "x11",
+    "wayland",
+] }
